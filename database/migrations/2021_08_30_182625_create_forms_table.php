@@ -19,6 +19,7 @@ class CreateFormsTable extends Migration
             $table->integer('age');
             $table->string('phone');
             $table->string('city');
+            $table->boolean('conditions');
             $table->timestamps();
         });
     }

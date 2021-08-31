@@ -56,6 +56,7 @@ class FormController extends Controller
                 $form->age = $request->age;
                 $form->phone = strval($request->phone);
                 $form->city = strtolower($request->city);
+                $form->conditions = $request->conditions;
                 $form->save();
     
                 return response()->json(['status'=>true,'codigo_http'=>200,'data'=>'updated_successfully'],200); 
@@ -80,7 +81,8 @@ class FormController extends Controller
             'name' => 'required',
             'age' => 'required|integer|min:18|max:90',
             'phone' => 'required|integer',
-            'city' => 'required'
+            'city' => 'required',
+            'conditions' => 'required|boolean'
         ];
     }
 }
