@@ -14,7 +14,7 @@ use App\Http\Controllers\FormController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/', function ($id) {
+Route::get('/', function () {
     return "Hello API";
 });
 Route::resource('form', FormController::class);
