@@ -8,13 +8,21 @@ use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
 {
-    public function index(){
-        $forms = Form::all();
-        return response()->json([
+    public function index(Request $request){
+        $startdate = $request->get('startdate');
+        $enddate = $request->get('enddate');
+        $forms = null;
+        if(isset($startdate) && isset($enddate)){
+            $forms = Form::filter($request->get('search'))->betweenDate($startdate,$enddate)->paginate(10);
+        }else{
+            $forms = Form::filter($request->get('search'))->paginate(10);
+        }
+        return view('showform',compact('forms'));
+        /* return response()->json([
             'status' => true,
             'codigo_http' => 200,
             'data' => $forms
-        ],200);
+        ],200); */
     }
     
     public function store(Request $request){
