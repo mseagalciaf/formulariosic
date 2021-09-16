@@ -18,43 +18,48 @@
     
     <div class="container" style="padding: 25px;">
         <div class="card" style="box-shadow: 2px 5px 5px gray;">
-            <div class="card-body">
-                <form style="margin: 5px">
-                    <div class="input-group">
-                        <input type="search" name="search" class="form-control" placeholder="Buscar..." 
-                        aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                        <input type="date" name="startdate">
-                        <input type="date" name="enddate">
-                        <div class="input-group-append" id="button-addon4">
-                            <button class="btn btn-outline-primary" type="submit" >Buscar</button>
+            <div class="card-body container">
+                <div class="col-12">
+                    <form style="margin: 5px">
+                        <div class="input-group">
+                            <input type="search" name="search" class="form-control" placeholder="Buscar..." 
+                            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                            <input type="date" name="startdate">
+                            <input type="date" name="enddate">
+                            <div class="input-group-append" id="button-addon4">
+                                <button class="btn btn-outline-primary" type="submit" >Buscar</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-                
-                <table class="table table-hover table-border">
-                    <thead style="background-color: #efefef;">
-                        <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Celular</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($forms as $form)
-                        <tr>
-                            <td scope="row">{{ $form->name}}</td>
-                            <td>{{ $form->age}}</td>
-                            <td>{{ $form->phone}}</td>
-                            <td>{{ $form->city}}</td>
-                            <td>{{ $form->created_at}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    
-                </table>
-                {{ $forms->links() }}
+                    </form>
+
+                </div>
+                <div class="col-12 table-responsive">
+                    <table class="table table-hover ">
+                        <thead style="background-color: #efefef;">
+                            <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($forms as $form)
+                            <tr>
+                                <td scope="row">{{ $form->name}}</td>
+                                <td>{{ $form->age}}</td>
+                                <td>{{ $form->phone}}</td>
+                                <td>{{ $form->city}}</td>
+                                <td>{{ $form->created_at}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        
+                    </table>
+                    {{ $forms->links() }}
+
+                </div>
             </div>
         </div>
     </div>
