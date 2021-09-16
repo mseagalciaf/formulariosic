@@ -24,8 +24,8 @@
                         <div class="input-group">
                             <input type="search" name="search" class="form-control" placeholder="Buscar..." 
                             aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                            <input placeholder="Fecha Desde" class="textbox-n" type="text" onfocus="(this.type='date')" name="startdate">
-                            <input placeholder="Fecha Hasta" class="textbox-n" type="text" onfocus="(this.type='date')" name="enddate">
+                            <input class="form-control" type="text" onfocus="(this.type='date')" placeholder="Desde" name="startdate">
+                            <input class="form-control" type="text" onfocus="(this.type='date')" placeholder="Hasta" name="enddate">
                             <div class="input-group-append" id="button-addon4">
                                 <button class="btn btn-outline-primary" type="submit" >Buscar</button>
                             </div>
